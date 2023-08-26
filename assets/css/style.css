@@ -14,8 +14,10 @@
 .header-content{
     align-self: center;
 }
-aside{
+.city-container{
     width: 25%;
+
+    border: solid black 1px;
 }
 .float-left{
     float: left;
@@ -25,5 +27,6 @@ aside{
 }
 .container{
     width: 75%;
-    margin-top: 50px;
+    height: 300px;
+    border: solid black 1px;
 }
