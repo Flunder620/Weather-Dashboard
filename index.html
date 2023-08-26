@@ -17,30 +17,33 @@
             <h3>Enter a City</h3>
             <form class="user-form">
                 <i class="fa-solid fa-location-dot"></i>
-                <label class="form-label" for="city-name">City Name:</label>
-                <input name="city-name" id="city-name" type="text" autofocus="true" class="form-input" />
+                <label class="form-label" for="city-name-input">City Name:</label>
+                <input name="city-name-input" id="city-name-input" type="text" autofocus="true" class="form-input" />
                 <button type="submit" class="search-btn">Search City</button>
             </form>
             <!-- City search history-pulled from local storage -->
             <div class="searched-cities">
+                <ul>
+
+                </ul>
             </div>
         </aside>
         <!-- Current chosen city weather -->
         <div class="city container float-right">
             <p class="city-name"></p>
             <p class="city-date"></p>
-            <p class="city-conditions"></p>
-            <p class="city-temperature"></p>
-            <p class="city-humidity"></p>
-            <p class="city-windspeed"></p>
+            <p class="city-con"></p>
+            <p class="city-temp"></p>
+            <p class="city-humid"></p>
+            <p class="city-wind"></p>
         </div>
         <!-- City weekly forcast -->
         <div class="forecast container float-right">
             <p class="forecast-date"></p>
-            <p class="forecast-conditions"></p>
-            <p class="forecast-temperature"></p>
-            <p class="forecast-humidity"></p>
-            <p class="forecast-windspeed"></p>
+            <p class="forecast-con"></p>
+            <p class="forecast-temp"></p>
+            <p class="forecast-humid"></p>
+            <p class="forecast-wind"></p>
         </div>
     </main>
 
