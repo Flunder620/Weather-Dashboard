@@ -12,6 +12,7 @@
         <div class="header-content">Weather Dashboard</div>
     </header>
     <main class="main-container">
+        <!-- User input for city -->
         <aside class="form-container float-left">
             <h3>Enter a City</h3>
             <form class="user-form">
@@ -20,9 +21,11 @@
                 <input name="city-name" id="city-name" type="text" autofocus="true" class="form-input" />
                 <button type="submit" class="search-btn">Search City</button>
             </form>
+            <!-- City search history-pulled from local storage -->
             <div class="searched-cities">
             </div>
         </aside>
+        <!-- Current chosen city weather -->
         <div class="city container float-right">
             <p class="city-name"></p>
             <p class="city-date"></p>
@@ -31,6 +34,7 @@
             <p class="city-humidity"></p>
             <p class="city-windspeed"></p>
         </div>
+        <!-- City weekly forcast -->
         <div class="forecast container float-right">
             <p class="forecast-date"></p>
             <p class="forecast-conditions"></p>
