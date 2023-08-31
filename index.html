@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-
+    
 <body>
     <header class="header">
         <div class="header-content">Weather Dashboard</div>
@@ -15,12 +15,12 @@
         <!-- User input for city -->
         <aside class="form-container float-left">
             <h3>Enter a City</h3>
-            <form class="user-form">
+            <div class="user-form">
                 <i class="fa-solid fa-location-dot"></i>
                 <label class="form-label" for="city-name-input">City Name:</label>
                 <input name="city-name-input" id="city-name-input" type="text" autofocus="true" class="form-input" />
-                <button type="submit" class="search-btn">Search City</button>
-            </form>
+                <button class="search-btn">Search City</button>
+            </div>
             <!-- City search history-pulled from local storage -->
             <div class="searched-cities">
                 <ul>
@@ -32,18 +32,13 @@
         <div class="city container float-right">
             <p class="city-name"></p>
             <p class="city-date"></p>
-            <p class="city-con"></p>
+            <img class="city-con">
             <p class="city-temp"></p>
             <p class="city-humid"></p>
             <p class="city-wind"></p>
         </div>
-        <!-- City weekly forcast -->
+        <!-- City weekly forecast -->
         <div class="forecast container float-right">
-            <p class="forecast-date"></p>
-            <p class="forecast-con"></p>
-            <p class="forecast-temp"></p>
-            <p class="forecast-humid"></p>
-            <p class="forecast-wind"></p>
         </div>
     </main>
 

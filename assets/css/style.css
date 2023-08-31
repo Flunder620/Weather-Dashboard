@@ -33,3 +33,7 @@
     height: 300px;
     margin-top: 10px;
 }
+.forecast{
+    display:flex;
+    flex-basis:25%;
+}
