@@ -55,8 +55,8 @@ function displayFiveDay(data) {
           data.list[i].weather[0].icon
         }.png">
         <p class="forecast-temp">${"Temperature: " + data.list[i].main.temp + "°f"}</p>
-        <p class="forecast-humid">test</p>
-        <p class="forecast-wind">test</p>
+        <p class="forecast-humid">${"Humidty: " + data.list[i].main.humidity + "% "}</p>
+        <p class="forecast-wind">${"Wind Speed: " + data.list[i].wind.speed + " mph"}</p>
         </div>`;
     forecastEl.insertAdjacentHTML("beforeend", html);
   }
