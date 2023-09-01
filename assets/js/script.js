@@ -31,12 +31,26 @@ function getCityName(event) {
       response.json().then(function (data) {
         displayCity(data);
         displayFiveDay(data);
-        renderCities();
+        init();
+        var cityText = cityNameInputEl.value
+
+        // Return from function early if submitted todoText is blank
+        if (cityText === "") {
+          return;
+        }
+      
+        // Add new todoText to todos array, clear the input
+        cities.push(cityText);
+        cityNameInputEl.value = "";
+      
+        // Store updated todos in localStorage, re-render the list
         storeCities();
+        renderCities();
       });
     }
   });
 }
+
 
 function displayCity(data) {
   console.log(data);
@@ -77,11 +91,18 @@ function displayFiveDay(data) {
 function renderCities() {
   cityListEl.textContent = "";
   for (var i = 0; i < cities.length; i++) {
-    var cityHistory = cities[i];
+    var city= cities[i];
     var li = document.createElement("li");
-    li.textContent = cityHistory;
+    li.textContent = city;
     cityListEl.appendChild(li)
   }
+}
+
+function init(){
+    var storedCity = JSON.parse(localStorage.getItem("cities"));
+    if (storedCity !== null) {
+        cities = storedCity;
+      }
 }
 
 function storeCities() {
