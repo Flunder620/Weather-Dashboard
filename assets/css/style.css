@@ -20,7 +20,8 @@
 .form-container{
     width: 24%;
     height: 350px;
-    font-size: 1.5em;
+    font-size: 2em;
+    text-align: center;
 }
 .float-left{
     float: left;

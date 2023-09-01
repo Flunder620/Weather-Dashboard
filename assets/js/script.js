@@ -34,16 +34,15 @@ function getCityName(event) {
         init();
         var cityText = cityNameInputEl.value
 
-        // Return from function early if submitted todoText is blank
         if (cityText === "") {
           return;
         }
       
-        // Add new todoText to todos array, clear the input
+        // Add new city to array and clear input
         cities.push(cityText);
         cityNameInputEl.value = "";
       
-        // Store updated todos in localStorage, re-render the list
+        // Store updated values
         storeCities();
         renderCities();
       });
@@ -51,7 +50,7 @@ function getCityName(event) {
   });
 }
 
-
+//for city element
 function displayCity(data) {
   console.log(data);
   cityNameEl.textContent = data.city.name;
@@ -64,7 +63,7 @@ function displayCity(data) {
   cityHumidEl.textContent = "Humidty: " + data.list[0].main.humidity + "% ";
   cityWindEl.textContent = "Wind Speed: " + data.list[0].wind.speed + " mph";
 }
-
+//five day forcast element
 function displayFiveDay(data) {
   forecastEl.textContent = "";
   for (var i = 0; i < data.list.length; i = i + 8) {
@@ -87,7 +86,7 @@ function displayFiveDay(data) {
     forecastEl.insertAdjacentHTML("beforeend", html);
   }
 }
-
+//render cities to li element
 function renderCities() {
   cityListEl.textContent = "";
   for (var i = 0; i < cities.length; i++) {
@@ -104,9 +103,8 @@ function init(){
         cities = storedCity;
       }
 }
-
+//sotre citiy localStorage
 function storeCities() {
-    // Stringify and set key in localStorage to todos array
     localStorage.setItem("cities", JSON.stringify(cities));
   }
 // fetch(queryURL)
