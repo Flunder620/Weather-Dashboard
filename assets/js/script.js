@@ -1,6 +1,8 @@
 var search = document.querySelector(".search-btn");
 var userFormEl = document.querySelector(".user-form");
 
+var cityNameInputEl = document.querySelector("#city-name-input");
+
 var cityNameEl = document.querySelector(".city-name");
 var cityDateEl = document.querySelector(".city-date");
 var cityConditionsEl = document.querySelector(".city-con");
@@ -10,7 +12,9 @@ var cityWindEl = document.querySelector(".city-wind");
 
 var forecastEl = document.querySelector(".forecast");
 
+var cities = [];
 var searchedCitiesEl = document.querySelector(".searched-cities");
+var cityListEl = document.querySelector(".city-list");
 
 // var apiKey = "29606f93b69cb8597014cd175be1c24d";
 // var queryURL = "api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
@@ -27,6 +31,8 @@ function getCityName(event) {
       response.json().then(function (data) {
         displayCity(data);
         displayFiveDay(data);
+        renderCities();
+        storeCities();
       });
     }
   });
@@ -54,12 +60,33 @@ function displayFiveDay(data) {
         <img class="forecast-con" src="https://openweathermap.org/img/wn/${
           data.list[i].weather[0].icon
         }.png">
-        <p class="forecast-temp">${"Temperature: " + data.list[i].main.temp + "°f"}</p>
-        <p class="forecast-humid">${"Humidty: " + data.list[i].main.humidity + "% "}</p>
-        <p class="forecast-wind">${"Wind Speed: " + data.list[i].wind.speed + " mph"}</p>
+        <p class="forecast-temp">${
+          "Temperature: " + data.list[i].main.temp + "°f"
+        }</p>
+        <p class="forecast-humid">${
+          "Humidty: " + data.list[i].main.humidity + "% "
+        }</p>
+        <p class="forecast-wind">${
+          "Wind Speed: " + data.list[i].wind.speed + " mph"
+        }</p>
         </div>`;
     forecastEl.insertAdjacentHTML("beforeend", html);
   }
 }
+
+function renderCities() {
+  cityListEl.textContent = "";
+  for (var i = 0; i < cities.length; i++) {
+    var cityHistory = cities[i];
+    var li = document.createElement("li");
+    li.textContent = cityHistory;
+    cityListEl.appendChild(li)
+  }
+}
+
+function storeCities() {
+    // Stringify and set key in localStorage to todos array
+    localStorage.setItem("cities", JSON.stringify(cities));
+  }
 // fetch(queryURL)
 search.addEventListener("click", getCityName);
