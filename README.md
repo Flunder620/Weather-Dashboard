@@ -15,7 +15,8 @@ When a city is typed inthe weather forecast for that city is displayed.
 ## Mock-Up
 
 The following image shows the web application's appearance and functionality: 
-![This shows what home page will look like](./assets/images/)
+![This shows what home page will look like](./assets/images/preview.png)
 
 ## Deployment Link
 
+https://flunder620.github.io/Weather-Dashboard/
