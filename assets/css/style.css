@@ -32,8 +32,15 @@
     width: 75%;
     height: 300px;
     margin-top: 10px;
+    border-radius: 5px;
+}
+.city{
+    font-size: 2em;
+    border: solid 10px rgb(95, 95, 241);
 }
 .forecast{
+    font-size: 2em;
     display:flex;
-    flex-basis:25%;
+    justify-content: space-around;
+    border: solid 10px rgb(95, 95, 241);
 }
